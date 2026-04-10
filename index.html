@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud Photo Gallery</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>☁️ My S3 Photo Gallery</h1>
+    <p>Cloud-Based Image Storage using AWS S3</p>
+</header>
+
+<section class="upload-section">
+    <input type="file" id="fileInput" hidden>
+
+    <button onclick="fileInput.click()">Choose Image</button>
+    <span id="fileName">No file chosen</span>
+    <button onclick="uploadImage()" class="upload-btn">Upload</button>
+
+    <p id="loader">Uploading...</p>
+</section>
+
+<section id="gallery" class="gallery"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
