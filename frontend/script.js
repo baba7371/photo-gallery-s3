@@ -38,7 +38,7 @@ async function uploadImage() {
         const formData = new FormData();
         formData.append("image", file);
 
-        const res = await fetch("http://localhost:5000/upload", {
+        const res = await fetch("https://photo-gallery-s3.onrender.com/upload", {
             method: "POST",
             body: formData
         });
@@ -73,7 +73,7 @@ function addImageToGallery(url) {
     btn.className = "delete-btn";
 
     btn.onclick = async () => {
-        await fetch("http://localhost:5000/delete", {
+        await fetch("https://photo-gallery-s3.onrender.com/delete", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -107,7 +107,7 @@ function showToast(msg) {
 
 async function loadImages() {
     try {
-        const res = await fetch("http://localhost:5000/images");
+        const res = await fetch("https://photo-gallery-s3.onrender.com/images");
         const images = await res.json();
 
         gallery.innerHTML = "";
